@@ -1,0 +1,9 @@
+<h2>Create a new list</h2>
+
+<%= form_for(@list) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to "All lists", lists_path %>
