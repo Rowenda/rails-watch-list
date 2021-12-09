@@ -1,14 +1,18 @@
 <h2><%= @list.name %></h2>
 
-<ul>
+<div class="cards">
 <% @list.movies.each do |movie| %>
-<li><%= movie.title %> - Synopsis: <%= movie.overview %> /
+<div class="card">
+<%= image_tag movie.poster_url, alt:"movie image", width: 200, height: 150 %>
+<p><%= movie.title %> - Synopsis: <%= movie.overview %> /
 <% movie.bookmarks.each do |bookmark| %>
 <%= bookmark.comment %> <%= link_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure ?" } %>
 <% end %>
-</li>
+</p>
 <% end %>
-</ul>
+</div>
+</div>
+
 
 
 
