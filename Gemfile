@@ -33,6 +33,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 # Add the .env
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Add the cloudinary gem
+gem 'cloudinary', '~> 1.16.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
