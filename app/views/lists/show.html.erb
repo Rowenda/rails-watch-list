@@ -1,19 +1,19 @@
 <h2><%= @list.name %></h2>
 
 <div class="cards">
-<% @list.movies.each do |movie| %>
-<div class="card">
-<%= image_tag movie.poster_url, alt:"movie image", width: 200, height: 150 %>
-<p><%= movie.title %> - Synopsis: <%= movie.overview %> /
-<% movie.bookmarks.each do |bookmark| %>
-<%= bookmark.comment %> <%= link_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure ?" } %>
-<% end %>
-</p>
+  <% @list.movies.each do |movie| %>
+  <div class="card" >
+    <%= image_tag movie.poster_url, alt:"movie image", width: 400, height: 200, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= movie.title %> </h5>
+      <p class="card-text"><%= movie.overview %></p>
+      <% movie.bookmarks.each do |bookmark| %>
+        <%= bookmark.comment %> <%= link_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure ?" }, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 </div>
-</div>
-
-
 
 
 <%= link_to "return to the menu", lists_path %>
