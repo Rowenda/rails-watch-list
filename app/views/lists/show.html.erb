@@ -1,6 +1,12 @@
-<div class="list-banner" style="background-image: url('<%= cl_image_path @list.photo.key, height: 250, width: 600, crop: :fill %>');">
-<h2><%= @list.name %></h2>
-</div>
+<% if @list.photo.attached? %>
+  <div class="list-banner" style="background-image: url('<%= cl_image_path @list.photo.key, height: 250, width: 600, crop: :fill %>');">
+    <h2><%= @list.name %></h2>
+  </div>
+<% else %>
+  <div class="banner">
+    <h2><%= @list.name %></h2>
+  </div>
+<% end %>
 
 <div class="cards">
   <% @list.movies.each do |movie| %>
