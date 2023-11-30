@@ -1,0 +1,34 @@
+$btn_blue: rgb(101, 139, 175);
+$btn_blue_light: rgb(146, 172, 197);
+
+.navbar-lewagon {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-action a {
+  padding: 0.8rem;
+  border: 1px solid $btn_blue;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $btn_blue_light;
+    color: black;
+  }
+}
+
+header {
+  height: 10rem;
+  width: 100%;
+  background-image: url('http://yesofcorsa.com/wp-content/uploads/2017/05/Cinema-Wallpaper-Free.jpg');
+  background-position: center;
+  background-size: cover;
+}

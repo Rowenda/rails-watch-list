@@ -1,0 +1,28 @@
+<% if @list.photo.attached? %>
+  <div class="list-banner" style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');">
+    <h2><%= @list.name %></h2>
+  </div>
+<% else %>
+  <div class="banner">
+    <h2><%= @list.name %></h2>
+  </div>
+<% end %>
+
+<div class="cards">
+  <% @list.movies.each do |movie| %>
+  <div class="card" >
+    <%= image_tag movie.poster_url, alt:"movie image", width: 400, height: 200, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= movie.title %> </h5>
+      <p class="card-text"><%= movie.overview %></p>
+      <% movie.bookmarks.each do |bookmark| %>
+        <%= bookmark.comment %> <%= link_to 'Delete Bookmark', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
+<%= link_to "return to the menu", lists_path %>
+<%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>

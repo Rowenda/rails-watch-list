@@ -1,0 +1,29 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.card {
+  width: 28rem;
+}
+
+.card-category {
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: blanchedalmond;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: rotate(1turn);
+    transition: ease-in 2s;
+  }
+}

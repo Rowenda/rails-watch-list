@@ -1,0 +1,32 @@
+.list-banner {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16rem;
+  width: 36rem;
+  margin: 0 auto;
+
+  h2 {
+    color: blanchedalmond;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16rem;
+  width: 36rem;
+  margin: 0 auto;
+  background-color: black;
+
+  h2 {
+    color: blanchedalmond;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
