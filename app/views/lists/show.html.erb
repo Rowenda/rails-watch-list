@@ -23,6 +23,26 @@
 <% end %>
 </div>
 
+<section class="text-center mt-2">
+<%= link_to "return to the menu", lists_path, class: "btn btn-primary" %>
+<%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: "btn btn-warning" %>
+</section>
 
-<%= link_to "return to the menu", lists_path %>
-<%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>
+
+<h2 class="text-center">Laisser un avis ?</h2>
+<div>
+  <%= simple_form_for([@list, @review]) do |f|%>
+  <%= f.input :content %>
+  <%= f.input :rating, collection: (0..5) %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
+
+
+<h2 class="text-center">Les avis:</h2>
+<% @list.reviews.each do |review| %>
+  <div class="container text-center">
+    <p><%= review.content %></p>
+    <p><%= review.rating %></p>
+  </div>
+<% end %>
